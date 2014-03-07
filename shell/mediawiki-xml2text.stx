@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<stx:transform version="1.0"
+  xmlns:stx="http://stx.sourceforge.net/2002/ns"
+  xmlns:mw="http://www.mediawiki.org/xml/export-0.8/"
+  pass-through="none"
+  output-encoding="utf-8"
+  output-method="text" > <!-- this stx style generates plain text file -->
+
+<!-- don't output any string values without asking
+     (redefinition of one of the implicit templates) -->
+<stx:template match="text()|@*"/>
+
+<stx:template match="mw:title">
+  <stx:text>---MEDIAWIKI-WORD--- </stx:text>
+  <stx:value-of select="string()"/>
+  <stx:text>&#10;</stx:text>
+</stx:template>
+
+<stx:template match="mw:revision/mw:text">
+  <stx:value-of select="string()"/>
+  <stx:text>&#10;</stx:text>
+</stx:template>
+
+</stx:transform>
