@@ -8,3 +8,8 @@ Different approaches are used:
 
  * shell scripts using xslt + awk, or stx + awk
  * python
+
+## Notes
+
+For real work, please refer to
+[mediawiki xml tools](https://meta.wikimedia.org/wiki/Data_dumps/Tools_for_importing)
