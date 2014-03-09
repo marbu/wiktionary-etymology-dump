@@ -36,10 +36,17 @@ def get_etymology(wiki_text):
     """
     result = []
     line_it = iter(wiki_text.splitlines())
-    # supposing etymology is stored on a sinle line, right after the heading
+    # supposing etymology is stored on a sinle line, after the heading
     for line in line_it:
         if line.startswith("===Etymology"):
-                result.append(line_it.next())
+            line = line_it.next().strip()
+            # skipping empty lines right after the heading
+            while len(line) == 0:
+                line = line_it.next().strip()
+            # but make sure that we are not leaving etymology section
+            if line.startswith("=="):
+                continue
+            result.append(line)
     return result
 
 def tag(tag_name):
