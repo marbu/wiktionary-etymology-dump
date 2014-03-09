@@ -26,8 +26,10 @@ Then for each `/mediawiki/page` in the file, we are interested in:
  * `/mediawiki/page/title/text()`, eg `woordenboek`
  * `/mediawiki/page/revision/text/text()`, but only the etymology section, eg:
 
-    ===Etymology===
-    {{compound|woord|boek|t1=word|t2=book|lang=nl}}. Akin to German {{term|Wörterbuch|lang=de}} and West Frisian {{term|wurdboek|lang=fy}}.
+```
+===Etymology===
+{{compound|woord|boek|t1=word|t2=book|lang=nl}}. Akin to German {{term|Wörterbuch|lang=de}} and West Frisian {{term|wurdboek|lang=fy}}.
+```
 
 The problem here is that a single word may contain multiple etymology entries
 (even zero), so we need to check for additional etymology headings in the text.
