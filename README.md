@@ -9,6 +9,8 @@ Different approaches tried here:
  * `shell`: stx (or xslt for comparison) template with awk script
  * `python`: simple python script using `xml.etree.ElementTree.iterparse()`
 
+Warning: no approach is fully working yet :)
+
 ## Requirements
 
 The input file is a mediawiki xml dump of english wiktionary which is quite
