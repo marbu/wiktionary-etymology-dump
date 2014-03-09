@@ -35,6 +35,9 @@ def get_etymology(wiki_text):
     Returns etymology from mediawiki text.
     """
     result = []
+    # check for empty input
+    if wiki_text is None:
+        return result
     line_it = iter(wiki_text.splitlines())
     # supposing etymology is stored on a sinle line, after the heading
     for line in line_it:
