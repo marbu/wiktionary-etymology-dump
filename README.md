@@ -6,7 +6,7 @@ a demonstration of different approaches with a simple hacked together script.
 
 Different approaches tried here:
 
- * `shell`: stx (or xslt for comparison) template with awk script
+ * `stx-xsl-awk`: stx (or xslt for comparison) template with awk script
  * `python`: simple python script using `xml.etree.ElementTree.iterparse()`
 
 Warning: no approach is fully working yet :)
@@ -14,7 +14,7 @@ Warning: no approach is fully working yet :)
 ## Requirements
 
 The input file is a mediawiki xml dump of english wiktionary which is quite
-large file (it takes 400 MB as compressed bzip file). So it makes sense to use
+large (it takes 400 MB as compressed bzip file). So it makes sense to use
 streaming processing - otherwise we would have to load the whole parse xml tree
 into memory which is insane :)
 
