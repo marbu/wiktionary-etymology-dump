@@ -1,3 +1,4 @@
 *.pyc
 *.swp
 *wiktionary*.xml.bz2
+*wiktionary*.xml
