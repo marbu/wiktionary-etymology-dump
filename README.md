@@ -1,15 +1,14 @@
 # Wiktionary Etymology Dump
 
 The goal of these scripts is to to extract etymology data from wiktionary
-mediawiki xml dump. The resulting code is not a reusable tool, it's rather
-a demonstration of different approaches with a simple hacked together script.
+mediawiki xml dump. The code is not a polished tool, it's rather just
+a demonstration of several different approaches.
 
 Different approaches tried here:
 
  * `stx-xsl-awk`: stx (or xslt for comparison) template with awk script
- * `python`: simple python script using `xml.etree.ElementTree.iterparse()`
-
-Warning: no approach is fully working yet :)
+ * `python`: python script using `xml.etree.ElementTree` (doesn't work)
+ * `python-sax`: python script using `xml.sax` module
 
 ## Requirements
 
@@ -42,13 +41,6 @@ for this task.
 
 Simple text output (for check and debugging), with a possibility to change it
 to sql input statements.
-
-## Concusion
-
-For this particular task, python script seems to be a better choice. The main
-reason is that we need to do several transformations besides simple xml
-processing (mediawiki parsing and sql output). Moreover python xml api is both
-simple to use and powerful.
 
 ## Notes
 
