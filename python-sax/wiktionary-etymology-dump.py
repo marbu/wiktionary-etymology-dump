@@ -24,6 +24,7 @@ wiktionary-etymology-dump: extracts etymology from wiktionary xml dump
 from optparse import OptionParser
 import sys
 import xml.sax
+import re
 
 
 def get_etymology(content):
@@ -57,6 +58,8 @@ class WiktionaryHandler(xml.sax.ContentHandler):
     Wiktionary etymology extracting SAX handler.
     """
 
+    ignore_title_re = re.compile("^[A-Z][a-z]+:")
+
     def __init__(self, dump_func):
         xml.sax.ContentHandler.__init__(self)
         self._dump_func = dump_func
@@ -88,8 +91,7 @@ class WiktionaryHandler(xml.sax.ContentHandler):
         if not self._in_vpage:
             return
         if self._in_title:
-            ignore_list = ["Appendix:", "Wiktionary:", "Index:", "Help:", "Template:", "Citations:", "MediaWiki:", "Category:"]
-            if any(map(lambda x: content.startswith(x), ignore_list)):
+            if self.ignore_title_re.match(content):
                 self._in_vpage = False
             else:
                 self._word = content
