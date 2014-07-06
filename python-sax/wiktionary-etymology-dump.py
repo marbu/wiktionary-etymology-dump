@@ -58,7 +58,7 @@ class WiktionaryHandler(xml.sax.ContentHandler):
     Wiktionary etymology extracting SAX handler.
     """
 
-    ignore_title_re = re.compile("^[A-Z][a-z]+:")
+    ignore_title_re = re.compile("^[A-Z][a-zA-Z]+:")
 
     def __init__(self, dump_func):
         xml.sax.ContentHandler.__init__(self)
