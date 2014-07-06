@@ -7,7 +7,7 @@ a demonstration of several different approaches.
 Different approaches tried here:
 
  * `stx-xsl-awk`: stx (or xslt for comparison) template with awk script
- * `python`: python script using `xml.etree.ElementTree` (doesn't work)
+ * `python-iterparse`: python script using `xml.etree.ElementTree` (doesn't work)
  * `python-sax`: python script using `xml.sax` module
 
 ## Requirements
