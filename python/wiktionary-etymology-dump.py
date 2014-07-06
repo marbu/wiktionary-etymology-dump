@@ -95,7 +95,7 @@ def dump_stdout(word, etymology):
     """
     Print dictionary data in a simple text format into stdout.
     """
-    template = u"WORD {0}:\n{1}"
+    template = u"WORD {0}\n{1}"
     print template.format(word, "\n".join(etymology)).encode("utf-8")
 
 # TODO: add SQL dump method
