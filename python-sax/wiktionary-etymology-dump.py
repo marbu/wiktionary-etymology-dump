@@ -107,16 +107,15 @@ def parse_wiktionary_xml(xml_file, dump_func):
     parser.setContentHandler(WiktionaryHandler(dump_func))
     parser.parse(xml_file)
 
-def dump_stdout(word, etymology):
+def dump_text(word, etymology):
     """
     Print dictionary data in a simple text format into stdout.
     """
     template = u"WORD {0}\n{1}"
     print template.format(word, "\n".join(etymology)).encode("utf-8")
 
-# TODO: add SQL dump method
 METHODS = {
-    "stdout": dump_stdout,
+    "text": dump_text,
      }
 
 def main(argv=None):
@@ -124,10 +123,10 @@ def main(argv=None):
     Read xml file from stdin or try to open file passed as first agument.
     """
     opt_parser = OptionParser(usage="usage: %prog [options] [xmlfile]")
-    opt_parser.set_defaults(dump="stdout")
+    opt_parser.set_defaults(dump="text")
     opt_parser.add_option("--dump",
         action="store",
-        help="dump method (def. stdout)")
+        help="dump method (simple text format is the default)")
     opts, args = opt_parser.parse_args()
 
     try:
