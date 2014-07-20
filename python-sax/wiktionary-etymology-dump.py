@@ -96,7 +96,7 @@ class WiktionaryHandler(xml.sax.ContentHandler):
             else:
                 self._word = content
                 self._content_list = []
-        if self._in_text:
+        elif self._in_text:
             self._content_list.append(content)
 
 def parse_wiktionary_xml(xml_file, dump_func):
